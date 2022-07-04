@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class GoalManagers : MonoBehaviour
 {
-    // public Collider ball; 
+    public Collider wallIsTrigger; 
+    // public Collider wall; 
     public string side; 
     public ScoreManager manager; 
  
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void OnTriggerEnter(Collider collision) 
     { 
         if (collision.tag == "Ball") 
         { 
-            switch(side)
-            {
-                case "Player1":
-                    Debug.Log("Goal");
-                    break;
-                
-            } 
+            manager.AddGoals(side);
+            Destroy(collision.gameObject);
         } 
     } 
 
     public void GameOver()
     {
-        Destroy(this);
+        this.GetComponent<Collider>().enabled = false;
+        wallIsTrigger.enabled = false;
+        // wall.enabled = true;
+        // Destroy(this);
     }
 }

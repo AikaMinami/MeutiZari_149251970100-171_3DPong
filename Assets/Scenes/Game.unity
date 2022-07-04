@@ -135,8 +135,8 @@ GameObject:
   - component: {fileID: 12687391}
   - component: {fileID: 12687390}
   - component: {fileID: 12687389}
-  - component: {fileID: 12687392}
   - component: {fileID: 12687393}
+  - component: {fileID: 12687392}
   m_Layer: 0
   m_Name: Wall-Player4
   m_TagString: Wall
@@ -229,7 +229,7 @@ BoxCollider:
   m_GameObject: {fileID: 12687387}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 4.656613e-10}
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc005d9d8bcd5ec4eb595b9ef8d02e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallIsTrigger: {fileID: 12687389}
   side: Player4
   manager: {fileID: 442720122}
 --- !u!1 &66482758
@@ -267,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &66482759
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &70917078
 Transform:
   m_ObjectHideFlags: 0
@@ -521,7 +522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &127988548
 Transform:
   m_ObjectHideFlags: 0
@@ -682,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &164061279
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1315,6 +1316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733288533}
+  - component: {fileID: 733288534}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -1332,9 +1334,62 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.029698104, y: 3.1935034, z: -1.6059656}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 917025425}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733288534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733288532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512593cabbf7f9144baa124969c58841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnArea: {fileID: 917025425}
+  maxBallAmount: 30
+  spawnInterval: 2
+  ballAreaMin: {x: -8.02, y: 0.62, z: 8.68}
+  ballAreaMax: {x: 7.809999, y: 0.76, z: 0}
+  ballTemplateList:
+  - {fileID: 164061278}
+  - {fileID: 127988547}
+  - {fileID: 66482758}
+  - {fileID: 70917077}
+--- !u!1 &917025424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917025425}
+  m_Layer: 0
+  m_Name: SpawnArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917025425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917025424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 733288533}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1672,8 +1727,8 @@ GameObject:
   - component: {fileID: 1137392892}
   - component: {fileID: 1137392891}
   - component: {fileID: 1137392890}
-  - component: {fileID: 1137392893}
   - component: {fileID: 1137392894}
+  - component: {fileID: 1137392893}
   m_Layer: 0
   m_Name: Wall-Player3
   m_TagString: Wall
@@ -1766,7 +1821,7 @@ BoxCollider:
   m_GameObject: {fileID: 1137392888}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1782,6 +1837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc005d9d8bcd5ec4eb595b9ef8d02e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallIsTrigger: {fileID: 1137392890}
   side: Player3
   manager: {fileID: 442720122}
 --- !u!1 &1260580479
@@ -1796,8 +1852,8 @@ GameObject:
   - component: {fileID: 1260580483}
   - component: {fileID: 1260580482}
   - component: {fileID: 1260580481}
-  - component: {fileID: 1260580484}
   - component: {fileID: 1260580485}
+  - component: {fileID: 1260580484}
   m_Layer: 0
   m_Name: Wall-Player1
   m_TagString: Wall
@@ -1890,7 +1946,7 @@ BoxCollider:
   m_GameObject: {fileID: 1260580479}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0.0000000060535967, y: 0.000000029802322, z: 0}
@@ -1906,6 +1962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc005d9d8bcd5ec4eb595b9ef8d02e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallIsTrigger: {fileID: 1260580481}
   side: Player1
   manager: {fileID: 442720122}
 --- !u!1 &1306547308
@@ -2889,8 +2946,8 @@ GameObject:
   - component: {fileID: 1958017283}
   - component: {fileID: 1958017282}
   - component: {fileID: 1958017281}
-  - component: {fileID: 1958017285}
   - component: {fileID: 1958017284}
+  - component: {fileID: 1958017285}
   m_Layer: 0
   m_Name: Wall-Player2
   m_TagString: Wall
@@ -2986,6 +3043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc005d9d8bcd5ec4eb595b9ef8d02e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallIsTrigger: {fileID: 1958017281}
   side: Player2
   manager: {fileID: 442720122}
 --- !u!65 &1958017285
@@ -2997,7 +3055,7 @@ BoxCollider:
   m_GameObject: {fileID: 1958017279}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0.000000006519258, y: 0.000000029802322, z: 0}
